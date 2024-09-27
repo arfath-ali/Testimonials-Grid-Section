@@ -1,0 +1,238 @@
+@font-face {
+    font-family: "barlowSemiCondensed";
+    src: url(font/barlowSemiCondensed/BarlowSemiCondensed-Medium.ttf);
+    font-weight: 500;
+    font-style: regular;
+}
+
+@font-face {
+    font-family: "barlowSemiCondensed";
+    src: url(font/barlowSemiCondensed/BarlowSemiCondensed-SemiBold.ttf);
+    font-weight: 600;
+    font-style: regular;
+}
+
+:root {
+    --moderateViolet: hsl(263, 55%, 52%);
+    --veryDarkGrayishBlue: hsl(217, 19%, 35%);
+    --veryDarkBlackishBlue: hsl(219, 29%, 14%);
+    --white: hsl(0, 0%, 100%);
+    --lightViolet: hsl(264, 82%, 70%);
+    --lightGray: hsl(0, 0%, 81%);
+    --lightGrayishBlue: hsl(210, 46%, 95%);
+}
+
+*::before,
+*,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+body {
+    font-family: "barlowSemiCondensed", sans-serif;
+    font-size: 0.813rem;
+
+    background-color: var(--lightGrayishBlue);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2.5rem;
+
+    min-height: 100vh;
+    margin: 4rem 1.5rem;
+}
+
+.testimonials {
+    display: grid;
+    grid-auto-columns: 1fr;
+    place-content: center;
+    gap: 1.5rem;
+    grid-template-areas: 
+    "g1"
+    "g2"
+    "g3"
+    "g4"
+    "g5";
+
+    max-width: 70rem;
+}
+
+.graduate-1 {
+    grid-area: g1;
+
+    background-color: var(--moderateViolet);
+    background-image: url(images/bg-pattern-quotation.svg);
+    background-repeat: no-repeat;
+    background-position: right 1.75rem top;
+    background-size: 6.5rem 6.7rem;
+
+    color: var(--white);
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+}
+
+.graduate-2 {
+    grid-area: g2;
+
+    background-color: var(--veryDarkGrayishBlue);
+    color: var(--white);
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+}
+
+.graduate-3 {
+    grid-area: g3;
+
+    background-color: var(--white);
+    color: var(--veryDarkGrayishBlue);
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+}
+
+.graduate-4 {
+    grid-area: g4;
+
+    background-color: var(--veryDarkBlackishBlue);
+    color: var(--lightGrayishBlue);
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+}
+
+.graduate-5 {
+    grid-area: g5;
+
+    background-color: var(--white);
+    color: var(--veryDarkGrayishBlue);
+
+    border-radius: 0.5rem;
+
+    width: 100%;
+}
+
+.graduates {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    margin: 2rem;
+}
+
+
+.profile {
+    display: flex;
+    gap: 1rem;
+}
+
+.grad-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+img {
+    width: 1.75rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
+
+.grad-img {
+    border: 2px solid var(--lightViolet);
+}
+
+.name {
+    font-size: 0.813rem;
+    font-weight: 500;
+}
+
+.grad-status {
+    font-size: 0.688rem;
+    font-weight: 500;
+    opacity: 50%;
+}
+
+.review {
+    font-size: 1.25rem;
+    font-weight: 600;
+
+    line-height: 1.5rem;
+}
+
+.testimonial {
+    opacity: 70%;
+    line-height: 1.125rem;
+
+    font-weight: 500;
+    font-size: 0.813rem;
+}
+
+.graduate-1 .testimonial{
+    color: var(--lightGray);
+}
+
+.graduate-4 .testimonial{
+    color: var(--white);
+}
+
+.attribution {
+    font-size: 2rem;
+    color: var(--veryDarkBlackishBlue);
+
+    width: 100%;
+    text-align: center;
+}
+
+@media(min-width: 28.125rem){
+    .testimonials{
+        grid-template-areas: 
+        "g1 g1"
+        "g2 g3"
+        "g4 g4"
+        "g5 g5";
+    }
+}
+
+@media(min-width: 40.625rem){
+    .testimonials{
+        grid-template-columns: 2fr 1fr;
+        grid-template-areas: 
+        "g1 g2"
+        "g4 g3"
+        "g5 g5";
+    }
+}
+
+@media(min-width: 56.25rem){
+    .testimonials{
+        grid-template-columns: 2fr 1fr 1fr;
+        grid-template-areas: 
+        "g1 g2 g5"
+        "g4 g3 g5";
+    }
+}
+
+@media(min-width: 70rem){
+    .testimonials{
+        grid-template-columns: 0.94fr 1.03fr 0.98fr 1fr;
+        grid-template-areas: 
+        "g1 g1 g2 g5"
+        "g3 g4 g4 g5";
+    }
+
+    .graduate-1{
+        background-position: right 6.25rem top;
+    }
+}
